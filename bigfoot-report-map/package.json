@@ -15,6 +15,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@turf/area": "^6.5.0",
     "@turf/buffer": "^6.5.0",
     "@turf/helpers": "^6.5.0",
     "maplibre-gl": "^3.3.1"

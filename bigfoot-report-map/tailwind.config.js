@@ -2,7 +2,12 @@
 export default {
   content: ["./*.html", "./*.js"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Lato"],
+        serif: ["Arvo"],
+      },
+    },
   },
   plugins: [],
 };

@@ -2,12 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/bigfoot.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bigfoot Sightings</title>
   </head>
   <body>
     <div id="map" class="h-screen w-screen"></div>
+    <button
+      id="openButton"
+      class="fixed top-2 left-2 z-20 bg-yellow-900 hover:bg-yellow-950 text-white font-bold font-serif py-2 px-4 rounded-full shadow"
+    >
+      Map Info
+    </button>
+    <div
+      id="offCanvas"
+      class="fixed inset-x-0 inset-y-0 z-30 w-full sm:w-1/2 h-max bg-yellow-900 text-white shadow-lg overflow-y-auto m-auto p-5 rounded-md"
+    >
+      <div id="closeButton" class="flex justify-start text-3xl ml-2 text-white cursor-pointer">&times;</div>
+      <h1 class="text-2xl font-serif font-bold p-2">Beware of Bigfoot</h1>
+      <div class="font-sans p-2">
+        How close have bigfoot been sighted near you? Use this map to find out!
+        <br /><br />
+        Click/tap anywhere on the map to see reports of bigfoot sightings within a 25 mile radius. You can also use the geolocate button below the
+        zoom controls to search from your current location.
+        <br /><br />
+        Buffer is being generated via Turf.js
+        <br /><br />
+        <ul class="list-disc">
+          <li>
+            Bigfoot data is being pulled dynamically from the ArcGIS REST API from
+            <a
+              class="text-yellow-200 hover:text-yellow-300 underline hover:no-underline"
+              href="https://hub.arcgis.com/datasets/TrainingServices::-bigfoot-sightings/explore?location=37.733283%2C-82.417035%2C4.38"
+              >ESRI Training Services</a
+            >
+            . This data is to be used for training, demonstration, and educational purposes only.
+          </li>
+          <li>
+            State boundaries obtained from
+            <a class="text-yellow-200 hover:text-yellow-300 underline hover:no-underline" href="https://www.naturalearthdata.com/">Natural Earth</a>
+            and transformed into an optimized GeoJSON.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="overlay" class="fixed top-0 left-0 z-10 w-screen h-screen bg-gray-800 bg-opacity-50 opacity-100 pointer-events-auto"></div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
